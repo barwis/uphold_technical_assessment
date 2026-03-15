@@ -1,0 +1,20 @@
+.currency-icon {
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.currency-icon[width='16'],
+.currency-icon[width='20'] {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi),
+       (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+  .currency-icon {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}

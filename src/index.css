@@ -1,13 +1,160 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://use.typekit.net/mqh0udi.css");
+
+:root {
+  --color-primaryDark-0: #eeffeb;
+  --color-primaryDark-5: #d6fed2;
+  --color-primaryDark-10: #acfca6;
+  --color-primaryDark-20: #84fb7f;
+  --color-primaryDark-30: #62e75f;
+  --color-primaryDark-40: #52ce50;
+  --color-primaryDark-50: #35b13d;
+  --color-primaryDark-60: #22872c;
+  --color-primaryDark-70: #0d6d1a;
+  --color-primaryDark-80: #065511;
+  --color-primaryDark-90: #034509;
+  --color-primaryDark-95: #013204;
+  --color-primaryDark-100: #001f02;
+  --color-primaryDark: var(--color-primaryDark-20);
+  --color-primaryLight-0: #f0fff3;
+  --color-primaryLight-5: #d6ffe0;
+  --color-primaryLight-10: #b1fcc3;
+  --color-primaryLight-20: #8ef5a6;
+  --color-primaryLight-30: #6fe68a;
+  --color-primaryLight-40: #49cc68;
+  --color-primaryLight-50: #39a854;
+  --color-primaryLight-60: #2a8440;
+  --color-primaryLight-70: #1d662e;
+  --color-primaryLight-80: #114c1f;
+  --color-primaryLight-90: #063b12;
+  --color-primaryLight-95: #03290c;
+  --color-primaryLight-100: #021907;
+  --color-primaryLight: var(--color-primaryLight-40);
+
+  --color-base-black: #000000;
+  --color-base-white: #ffffff;
+  --color-neutral-0: #f7f8fc;
+  --color-neutral-5: #ebecf5;
+  --color-neutral-10: #d5d7e7;
+  --color-neutral-20: #bcc2dc;
+  --color-neutral-30: #a5b0cf;
+  --color-neutral-40: #8897bf;
+  --color-neutral-50: #7384b0;
+  --color-neutral-60: #495a83;
+  --color-neutral-70: #35415f;
+  --color-neutral-80: #273149;
+  --color-neutral-90: #1d2738;
+  --color-neutral-95: #141c29;
+  --color-neutral-100: #090d14;
+  --color-neutral: var(--color-neutral-95);
+
+  /* font sizes: 
+   * based on uphold.com font-sizes + media queries
+   * converted into clamp() values using https://clampgenerator.com/tools/font-size-typescale/
+  */
+
+  --heading-font-size: clamp(2.25rem, calc(0rem + 3.891vw), 3.5rem);
+  --body-font-size: clamp(1.13rem, calc(0.001rem + 1.389vw), 1.25rem);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: none;
+  border: none;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  color: var(--color-neutral-90);
+  font:
+    400 clamp(1.13rem, calc(0.001rem + 1.389vw), 1.25rem) "proxima-nova",
+    sans-serif;
+  margin: 0;
+}
+
+input {
+  font-family: "proxima-nova", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  color: var(--color-primaryLight-40);
+  font-size: clamp(2.25rem, calc(0rem + 3.891vw), 3.5rem);
+  letter-spacing: -0.03em;
+  line-height: 4.306vw;
+  margin: 0;
+
+  @media (max-width: 925px) {
+    line-height: 40px;
+  }
+
+  @media (min-width: 1439px) {
+    line-height: 62px;
+  }
+}
+
+p,
+span,
+div {
+  font-weight: 400;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s linear;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 30px;
+  margin: 0 auto;
+  max-width: 580px;
+  min-width: 320px;
+  padding: 0 16px;
+  width: 100%;
+}
+
+.cta {
+  color: var(--color-neutral-40);
+  padding: 30px 0;
+  text-align: center;
+  text-wrap: balance;
 }

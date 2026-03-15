@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+# Currency Converter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A real-time currency converter built with React 19 and TypeScript for the Uphold Frontend Engineer (Senior) technical assessment.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This application displays an input amount converted to multiple currencies using live exchange rates from Uphold's API. The interface features a currency input field, a dropdown selector to change the base currency, and a dynamic list showing conversions to all available currencies.
 
-### `npm start`
+## Architecture Decisions / Assumptions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Since no strict technical specification was provided (especially when it comes to UI), I took the liberty to make some educated guesses based on JPEG images provided and also inspecting existing https://uphold.com/ website to determine some visual styles (especially colour palette). I also determined that the font used in designs is Proxima Nova. Since I don't have access to this font - I've used CSS import from Typekit to load the font - same as the one being used on https://uphold.com/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. Even though Uphold Javascript SDK is being used, because I don't have an Uphold (dev) account, I decided to use MSW to mock API responses. This eliminates any potential CORS issues, and is also a good approach for future improvements - e.g., implementing E2E testing, albeit due to time constraints, I did not manage to include it.
 
-### `npm test`
+3. The UI is not as pixel-perfect and responsive as I would aim it to be. Again - due to time constraints - my main focus was proper functionality and user flow, making the UX as good as possible. Therefore visuals - colours, spacings, sizes etc are not 100% aligned with provided UI images.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. I added some comments in the code to explain bits and pieces where I thought it would be helpful.
 
-### `npm run build`
+5. I used one external package - qrcode.react, for generating qr code in the footer - url should match the one included in design jpegs. The rest of the code is written by me.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**SDK Browser Adapter Pattern**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Uphold SDK is environment-agnostic and requires manual injection of HTTP client and storage adapters
+- Created `FetchClient` and `BrowserStorage` adapters for browser compatibility
+- Pattern: `sdk.client = createFetchClient(); sdk.storage = createBrowserStorage();`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Testing Strategy
 
-### `npm run eject`
+**MSW (Mock Service Worker)**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- API mocking in both development and tests
+- Realistic responses without hitting real API
+- Test isolation and deterministic results
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**TODO:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- implement E2E testing
+- adjust styling to match designs
+- improve responsive, mobile-first styling
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Installation
 
-## Learn More
+```bash
+# Install dependencies
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Start development server
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Visit [http://localhost:3000](http://localhost:3000)

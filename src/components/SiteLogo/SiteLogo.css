@@ -1,0 +1,7 @@
+.siteLogo {
+  display: block;
+  height: 40px;
+  max-width: 100%;
+  object-fit: contain;
+  width: auto;
+}

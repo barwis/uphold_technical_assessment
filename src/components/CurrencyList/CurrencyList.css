@@ -1,0 +1,68 @@
+.currency-list {
+  flex: 1;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 16px 32px;
+  width: 100%;
+}
+
+.currency-list[data-calculating="true"],
+.currency-list[data-stale="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.empty-state {
+  color: var(--color-neutral-50);
+  font-size: 16px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.currency-item {
+  align-items: center;
+  animation: slideInFromTop 0.4s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  padding: 16px 20px;
+  transition: all 0.2s;
+}
+
+.currency-item-icon {
+  flex-shrink: 0;
+}
+
+.currency-code {
+  color: var(--color-neutral-90);
+  font: 700 16px/1 "proxima-nova", sans-serif;
+}
+
+.currency-item-amount {
+  color: var(--color-neutral-90);
+  flex: 1;
+  font: 700 20px/1 "proxima-nova", sans-serif;
+}
+
+@media (max-width: 640px) {
+  .currency-item {
+    padding: 12px 16px;
+  }
+
+  .currency-item-amount {
+    font-size: 16px;
+  }
+}

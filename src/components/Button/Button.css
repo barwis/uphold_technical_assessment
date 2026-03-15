@@ -1,0 +1,13 @@
+.button {
+  background: var(--color-primaryLight-40);
+  border: none;
+  border-radius: 40px;
+  color: var(--color-base-white);
+  cursor: pointer;
+  display: inline-block;
+  flex: 0;
+  font: 16px/1 "proxima-nova", sans-serif;
+  padding: 12px 16px;
+  transition: background 150ms;
+  white-space: nowrap;
+}

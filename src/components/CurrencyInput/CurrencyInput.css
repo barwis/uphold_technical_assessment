@@ -1,0 +1,46 @@
+.currency-input-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.currency-input {
+  background: transparent;
+  border: none;
+  color: var(--color-neutral-70);
+  flex: 1;
+  font: var(--heading-font-size) "proxima-nova", sans-serif;
+  transition: box-shadow 0.2s;
+  width: 100%;
+}
+
+.currency-input::placeholder {
+  color: var(--color-neutral-30);
+  opacity: 1;
+}
+
+.currency-input:disabled {
+  background: var(--color-neutral-10);
+  color: var(--color-neutral-50);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.currency-input-measure {
+  font: var(--heading-font-size) "proxima-nova", sans-serif;
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+  white-space: pre;
+}
+
+.currency-input-decimal-hint {
+  color: var(--color-neutral-30);
+  font: var(--heading-font-size) "proxima-nova", sans-serif;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
