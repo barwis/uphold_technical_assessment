@@ -1,10 +1,15 @@
 header {
   align-items: center;
   display: flex;
-  flex: 0 0 150px;
+  flex: 0 0 80px;
   justify-content: space-between;
   padding: 0 16px;
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
 }
 
 header ul {
@@ -20,6 +25,7 @@ header nav a {
   font-weight: 500;
   text-decoration: none;
   transition: color 0.3s linear;
+  font-size: 0.8em;
 }
 
 header ul li a:hover {
@@ -30,7 +36,7 @@ header ul li a:hover {
   background: none;
   border: none;
   cursor: pointer;
-  display: none;
+  display: block;
   flex: 1;
   padding: 8px;
   z-index: 1001;
@@ -82,20 +88,30 @@ header ul li a:hover {
 }
 
 .header-nav {
-  display: block;
-  flex: 1;
+  display: inline-block;
+}
+
+header .hamburger-menu-wrapper,
+header .header-logo,
+header .login-button-container {
+  /* flex: 1; */
+  display: flex;
+}
+
+@media (min-width: 769px) {
+  header {
+    flex: 0 0 140px;
+  }
+  header .hamburger-menu {
+    display: none;
+  }
+
+  header .hamburger-menu-wrapper {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
-  header {
-    flex: 0 0 80px;
-  }
-
-  .hamburger-menu {
-    display: block;
-    order: -1;
-  }
-
   .header-nav {
     background: white;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -148,4 +164,18 @@ header ul li a:hover {
   header ul {
     gap: 20px;
   }
+}
+
+.header-logo {
+  flex: 0 0 auto;
+}
+
+.header-logo > a {
+  max-width: 100%;
+}
+
+.login-button-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }

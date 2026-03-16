@@ -51,14 +51,15 @@
    * based on uphold.com font-sizes + media queries
    * converted into clamp() values using https://clampgenerator.com/tools/font-size-typescale/
   */
-
-  --heading-font-size: clamp(2.25rem, calc(0rem + 3.891vw), 3.5rem);
+  --heading-font-size: clamp(2.25rem, calc(0.675rem + 2.724vw), 3.13rem);
   --body-font-size: clamp(1.13rem, calc(0.001rem + 1.389vw), 1.25rem);
+  --input-font-size: var(--heading-font-size);
 }
 
 * {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
 }
 
@@ -100,9 +101,9 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  color: var(--color-primaryLight-40);
-  font-size: clamp(2.25rem, calc(0rem + 3.891vw), 3.5rem);
+h1 {
+  /* color: var(--color-primaryLight-40); */
+  font-size: var(--heading-font-size);
   letter-spacing: -0.03em;
   line-height: 4.306vw;
   margin: 0;
@@ -123,9 +124,34 @@ div {
   margin: 0;
 }
 
+/* make sure clikable elements are at least 40px in size
+ * for mobile accessibility reasons
+ */
 a {
   text-decoration: none;
   transition: color 0.3s linear;
+  min-height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: stretch;
+}
+
+/* images inside can't be "stretched" with 
+ * with parent's justify-content: stretch;
+ * so we need to center them instead.
+*/
+a:has(img) {
+  justify-content: center;
+}
+
+@media (min-width: 769px) {
+  /* revert for non-mobile */
+  a {
+    min-width: auto;
+    min-height: auto;
+  }
 }
 
 .visually-hidden {
@@ -144,17 +170,18 @@ main {
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 30px;
+  gap: 32px;
   margin: 0 auto;
   max-width: 580px;
   min-width: 320px;
-  padding: 0 16px;
+  padding: 30px 16px;
   width: 100%;
 }
 
 .cta {
   color: var(--color-neutral-40);
-  padding: 30px 0;
+  padding: 0;
   text-align: center;
   text-wrap: balance;
+  font-size: 1.1em;
 }
