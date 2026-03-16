@@ -59,12 +59,11 @@ export function CurrencySelector<T = string>({
     }
   }, [isOpen, selectedIndex]);
 
-  const focusInputAtEnd = () => {
-    const input = document.getElementById("currency-input") as HTMLInputElement;
-    if (input) {
-      input.focus();
-      const length = input.value.length;
-      input.setSelectionRange(length, length);
+  const focusCurrencyList = () => {
+    const form = document.getElementById("currency-converter-form");
+    if (form) {
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+      form.focus();
     }
   };
 
@@ -72,7 +71,7 @@ export function CurrencySelector<T = string>({
     onChange?.(option.value);
     setIsOpen(false);
     setFocusedIndex(-1);
-    focusInputAtEnd();
+    focusCurrencyList();
   };
 
   const handleTriggerKeyDown = (event: React.KeyboardEvent) => {
@@ -137,7 +136,7 @@ export function CurrencySelector<T = string>({
       case "Escape":
         event.preventDefault();
         setIsOpen(false);
-        focusInputAtEnd();
+        focusCurrencyList();
         break;
       case "Tab":
         setIsOpen(false);

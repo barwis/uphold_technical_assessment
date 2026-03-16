@@ -140,7 +140,7 @@ function App() {
           Receive competitive and transparent pricing with no hidden spreads.
           See how we compare.
         </p>
-        <div className="currency-converter-form">
+        <div id="currency-converter-form" className="currency-converter-form" tabIndex={-1}>
           <label htmlFor="currency-input" className="visually-hidden">
             Amount to convert
           </label>

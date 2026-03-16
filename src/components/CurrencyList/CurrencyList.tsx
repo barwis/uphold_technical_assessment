@@ -43,6 +43,7 @@ export const CurrencyList = ({
 
   return (
     <div
+      id="currency-list"
       className="currency-list"
       data-calculating={calculating}
       data-stale={isStale}
@@ -51,6 +52,7 @@ export const CurrencyList = ({
       aria-label="Exchange rates"
       aria-live="polite"
       aria-busy={calculating}
+      tabIndex={-1}
     >
       {exchangeRates.map((rate, index) => (
         <div

@@ -96,7 +96,6 @@ All notable changes to this project will be documented in this file.
 2. Pressing Enter or mobile keyboard "next" focuses currency selector
 3. Currency selector auto-opens on focus
 4. Arrow keys navigate options, Enter selects
-5. Focus returns to input with cursor at end
 
 #### MSW Production Setup
 
