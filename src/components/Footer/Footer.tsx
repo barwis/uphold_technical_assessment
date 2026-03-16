@@ -79,12 +79,18 @@ export const Footer = () => {
         <ul>
           <li>
             <a href="/">
-              <img src={`${process.env.PUBLIC_URL}/assets/appstore.svg`} alt="App Store" />
+              <img
+                src={`${process.env.PUBLIC_URL}/assets/appstore.svg`}
+                alt="App Store"
+              />
             </a>
           </li>
           <li>
             <a href="/">
-              <img src={`${process.env.PUBLIC_URL}/assets/play_store.svg`} alt="Google Play" />
+              <img
+                src={`${process.env.PUBLIC_URL}/assets/play_store.svg`}
+                alt="Google Play"
+              />
             </a>
           </li>
         </ul>
@@ -103,10 +109,10 @@ export const Footer = () => {
             <a href="/agreements">Agreements</a>
           </li>
           <li>
-            <a href="/agreements">Agreements</a>
+            <a href="/privacy-policy">Privacy &amp; Data Policy</a>
           </li>
           <li>
-            <a href="/agreements">Agreements</a>
+            <a href="/cookie-policy">Cookie policy</a>
           </li>
         </ul>
       </div>

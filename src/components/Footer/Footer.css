@@ -96,6 +96,7 @@ footer select {
   justify-content: center;
   margin: 20px 0 0;
   text-align: center;
+  text-wrap: balance;
 
   @media (min-width: 926px) {
     grid-column: 1 / -2;
@@ -106,14 +107,19 @@ footer select {
 
 .copyright ul {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10px;
   margin-top: 20px;
 
   @media (min-width: 926px) {
+    flex-direction: row;
     gap: 20px;
-    margin-top: 0;
+    margin-top: 10px;
   }
+}
+
+.copyright ul li a {
+  justify-content: center;
 }
 
 .qr {
