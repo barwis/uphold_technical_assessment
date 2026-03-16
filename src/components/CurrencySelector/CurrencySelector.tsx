@@ -60,8 +60,17 @@ export function CurrencySelector<T = string>({
   }, [isOpen, selectedIndex]);
 
   const focusCurrencyList = () => {
+    const input = document.getElementById("currency-input") as HTMLInputElement;
     const form = document.getElementById("currency-converter-form");
-    if (form) {
+
+    // If input is empty, focus it to guide user to enter amount
+    if (input && (!input.value || input.value === "0" || input.value === "0.00")) {
+      input.focus();
+      const length = input.value.length;
+      input.setSelectionRange(length, length);
+    }
+    // If input has value, scroll to show results
+    else if (form) {
       form.scrollIntoView({ behavior: "smooth", block: "start" });
       form.focus();
     }

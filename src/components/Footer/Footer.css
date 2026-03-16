@@ -29,14 +29,13 @@ footer ul {
 }
 
 footer nav {
-  gap: 20px;
+  gap: inherit;
   display: grid;
   grid-template-columns: subgrid;
   /* grid-column: 1; */
   /* grid-template-columns: 1fr; */
 
   @media (min-width: 926px) {
-    gap: 0;
     grid-column: 2 / span 4;
     grid-template-columns: subgrid;
   }
