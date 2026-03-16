@@ -2,21 +2,24 @@ footer {
   border-top: 1px solid var(--color-neutral-5);
   display: grid;
   font-size: 16px;
-  gap: 40px;
+  gap: 20px;
   grid-template-columns: 1fr;
+  grid-auto-rows: min-content;
   padding: 50px 16px;
+  max-width: 1142px;
+  margin: 0 auto;
+  width: 100%;
 
   @media (min-width: 926px) {
-    gap: 20px;
-    grid-template-columns: repeat(7, 1fr);
-    padding: 50px 0;
+    gap: 18px;
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 
 footer h3 {
   color: var(--color-neutral-60);
-  line-height: 40px;
-  margin-bottom: 25px;
+  line-height: 2;
+  margin-bottom: 20px;
 }
 
 footer ul {
@@ -26,14 +29,15 @@ footer ul {
 }
 
 footer nav {
+  gap: 20px;
   display: grid;
-  gap: 40px;
-  grid-column: 1;
-  grid-template-columns: 1fr;
+  grid-template-columns: subgrid;
+  /* grid-column: 1; */
+  /* grid-template-columns: 1fr; */
 
   @media (min-width: 926px) {
     gap: 0;
-    grid-column: 2 / -3;
+    grid-column: 2 / span 4;
     grid-template-columns: subgrid;
   }
 }
@@ -51,11 +55,9 @@ footer .apps-lang {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  grid-column: 1;
 
   @media (min-width: 926px) {
     align-items: end;
-    grid-column: -3 / span 2;
   }
 }
 
@@ -72,7 +74,6 @@ footer .apps-lang img {
 
 footer a {
   color: var(--color-neutral-40);
-  display: block;
 }
 
 footer a:hover {

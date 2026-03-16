@@ -53,6 +53,14 @@ module.exports = {
       rules: {
         'no-var': 'off',
       }
+    },
+    {
+      files: ['e2e/**/*.ts', 'e2e/**/*.spec.ts'],
+      rules: {
+        'testing-library/prefer-screen-queries': 'off',
+        'testing-library/await-async-queries': 'off',
+        'testing-library/prefer-presence-queries': 'off',
+      }
     }
   ]
 };

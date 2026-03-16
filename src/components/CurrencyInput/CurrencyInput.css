@@ -9,7 +9,9 @@
   border: none;
   color: var(--color-neutral-70);
   flex: 1;
-  font: var(--heading-font-size) "proxima-nova", sans-serif;
+  font:
+    var(--input-font-size) "proxima-nova",
+    sans-serif;
   transition: box-shadow 0.2s;
   width: 100%;
 }
@@ -27,7 +29,9 @@
 }
 
 .currency-input-measure {
-  font: var(--heading-font-size) "proxima-nova", sans-serif;
+  font:
+    var(--input-font-size) "proxima-nova",
+    sans-serif;
   pointer-events: none;
   position: absolute;
   visibility: hidden;
@@ -36,7 +40,9 @@
 
 .currency-input-decimal-hint {
   color: var(--color-neutral-30);
-  font: var(--heading-font-size) "proxima-nova", sans-serif;
+  font:
+    var(--input-font-size) "proxima-nova",
+    sans-serif;
   left: 0;
   pointer-events: none;
   position: absolute;

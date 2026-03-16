@@ -27,10 +27,12 @@
   color: var(--color-neutral-90);
   cursor: pointer;
   display: inline-flex;
-  font: 500 16px/20px "proxima-nova", sans-serif;
+  font:
+    500 16px/20px "proxima-nova",
+    sans-serif;
   gap: 8px;
   justify-content: space-between;
-  padding: 12px 20px;
+  padding: 12px 16px;
   position: relative;
   white-space: nowrap;
   width: 100%;
@@ -78,7 +80,7 @@
   list-style: none;
   margin: 4px 0 0;
   max-height: 300px;
-  overflow-y: auto;
+  overflow-y: scroll;
   padding: 8px 0;
   position: absolute;
   top: 100%;
@@ -102,7 +104,9 @@
   color: var(--color-neutral-70);
   cursor: pointer;
   display: flex;
-  font: 16px/20px "proxima-nova", sans-serif;
+  font:
+    16px/20px "proxima-nova",
+    sans-serif;
   gap: 12px;
   padding: 12px 20px;
   transition:

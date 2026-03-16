@@ -32,9 +32,15 @@ This application displays an input amount converted to multiple currencies using
 - Realistic responses without hitting real API
 - Test isolation and deterministic results
 
+**E2E Testing (Playwright)**
+
+- End-to-end tests covering user flows and interactions
+- Tests input formatting, currency selection, keyboard navigation
+- Automated browser testing with Chromium, Firefox, WebKit
+- See [Running E2E Tests](#running-e2e-tests) section below
+
 **TODO:**
 
-- implement E2E testing
 - adjust styling to match designs
 - improve responsive, mobile-first styling
 
@@ -49,3 +55,35 @@ npm start
 ```
 
 Visit [http://localhost:3000](http://localhost:3000)
+
+### Running Tests
+
+**Unit Tests (Jest + React Testing Library):**
+```bash
+npm test                    # Interactive watch mode
+npm test -- --coverage      # With coverage report
+```
+
+**E2E Tests (Playwright):**
+```bash
+# First time setup - install browser binaries
+npx playwright install --with-deps    # Linux/macOS
+npx playwright install                # Windows
+
+# Run tests
+npm run test:e2e          # Headless mode
+npm run test:e2e:ui       # Interactive UI mode
+npm run test:e2e:headed   # Watch browser execute
+npm run test:e2e:report   # View last HTML report
+```
+
+**E2E Test Coverage:**
+- Currency input and formatting (thousand separators, decimal hints)
+- Currency selector dropdown functionality
+- Keyboard navigation (Tab, Arrow keys, Enter, Escape)
+- Exchange rate calculations and updates
+- Focus management and accessibility
+
+### Live Preview
+
+App deployed to gh-pages - visit: [https://barwis.github.io/uphold_technical_assessment/](https://barwis.github.io/uphold_technical_assessment/)

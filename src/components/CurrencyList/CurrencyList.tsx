@@ -36,9 +36,7 @@ export const CurrencyList = ({
   if (exchangeRates.length === 0) {
     return (
       <div className="currency-list">
-        <p className="empty-state">
-          Enter an amount above to see exchange rates
-        </p>
+        <p className="empty-state">Enter an amount above to check the rates.</p>
       </div>
     );
   }
@@ -75,7 +73,9 @@ export const CurrencyList = ({
           <div className="currency-item-icon" aria-hidden="true">
             <CurrencyIcon currencyCode={rate.code} />
           </div>
-          <strong className="currency-code" aria-hidden="true">{rate.code}</strong>
+          <strong className="currency-code" aria-hidden="true">
+            {rate.code}
+          </strong>
         </div>
       ))}
     </div>

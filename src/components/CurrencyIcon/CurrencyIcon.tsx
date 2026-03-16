@@ -19,8 +19,8 @@ export function CurrencyIcon({ currencyCode }: CurrencyIconProps) {
       `}
       alt={`${code} currency icon`}
       className="currency-icon"
-      width={32}
-      height={32}
+      width={25}
+      height={25}
       loading="lazy"
     />
   );

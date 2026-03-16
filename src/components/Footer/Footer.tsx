@@ -79,12 +79,12 @@ export const Footer = () => {
         <ul>
           <li>
             <a href="/">
-              <img src="/assets/appstore.svg" alt="App Store" />
+              <img src={`${process.env.PUBLIC_URL}/assets/appstore.svg`} alt="App Store" />
             </a>
           </li>
           <li>
             <a href="/">
-              <img src="/assets/play_store.svg" alt="Google Play" />
+              <img src={`${process.env.PUBLIC_URL}/assets/play_store.svg`} alt="Google Play" />
             </a>
           </li>
         </ul>

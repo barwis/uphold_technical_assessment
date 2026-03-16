@@ -1,6 +1,6 @@
 import { rest } from "msw";
 
-const UPHOLD_SANDBOX_URL = "http://api-sandbox.uphold.com";
+const UPHOLD_SANDBOX_URL = "https://api-sandbox.uphold.com";
 
 // Base exchange rates from USD
 const baseRates: Record<string, number> = {

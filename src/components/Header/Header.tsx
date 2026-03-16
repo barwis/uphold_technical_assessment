@@ -16,19 +16,21 @@ export const Header = () => {
 
   return (
     <header>
-      <button
-        type="button"
-        className="hamburger-menu"
-        onClick={toggleMobileMenu}
-        aria-label="Toggle menu"
-        aria-expanded={isMobileMenuOpen}
-      >
-        <div className={`hamburger-icon ${isMobileMenuOpen ? "open" : ""}`}>
-          <span />
-          <span />
-          <span />
-        </div>
-      </button>
+      <div className="hamburger-menu-wrapper">
+        <button
+          type="button"
+          className="hamburger-menu"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+          aria-expanded={isMobileMenuOpen}
+        >
+          <div className={`hamburger-icon ${isMobileMenuOpen ? "open" : ""}`}>
+            <span />
+            <span />
+            <span />
+          </div>
+        </button>
+      </div>
 
       <nav className={`header-nav ${isMobileMenuOpen ? "mobile-open" : ""}`}>
         <ul>
@@ -49,10 +51,10 @@ export const Header = () => {
           </li>
         </ul>
       </nav>
-      <div style={{ flex: "0 0 auto", height: 40 }}>
+      <div className="header-logo">
         <SiteLogo />
       </div>
-      <div style={{ flex: "1", display: "flex", justifyContent: "flex-end" }}>
+      <div className="login-button-container">
         <Button className="login-button">Log in</Button>
       </div>
     </header>

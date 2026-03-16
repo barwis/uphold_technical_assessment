@@ -81,7 +81,6 @@ export function CurrencyInput({
 
   const handleBlur = () => {
     setIsFocused(false);
-
     // On blur, solidify the decimals in the display only (don't notify parent)
     if (displayValue) {
       const unformatted = displayValue.replace(/,/g, "");
@@ -94,6 +93,18 @@ export function CurrencyInput({
 
       const formatted = formatValue(withDecimals);
       setDisplayValue(formatted);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      const currencySelector = document.getElementById("currency-selector");
+      if (currencySelector) {
+        currencySelector.focus();
+      } else {
+        e.currentTarget.blur();
+      }
     }
   };
 
@@ -126,11 +137,13 @@ export function CurrencyInput({
         name="amount"
         type="text"
         inputMode="decimal"
+        enterKeyHint="next"
         className="currency-input"
         value={displayValue}
         onChange={handleChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
+        onKeyDown={handleKeyDown}
         disabled={disabled}
         placeholder="0.00"
         autoComplete="off"

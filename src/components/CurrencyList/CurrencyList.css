@@ -4,6 +4,8 @@
   max-width: 800px;
   padding: 0 16px 32px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .currency-list[data-calculating="true"],
@@ -14,8 +16,7 @@
 
 .empty-state {
   color: var(--color-neutral-50);
-  font-size: 16px;
-  padding: 48px 24px;
+  font-size: 0.7em;
   text-align: center;
 }
 
@@ -48,13 +49,17 @@
 
 .currency-code {
   color: var(--color-neutral-90);
-  font: 700 16px/1 "proxima-nova", sans-serif;
+  font:
+    700 16px/1 "proxima-nova",
+    sans-serif;
 }
 
 .currency-item-amount {
   color: var(--color-neutral-90);
   flex: 1;
-  font: 700 20px/1 "proxima-nova", sans-serif;
+  font:
+    700 20px/1 "proxima-nova",
+    sans-serif;
 }
 
 @media (max-width: 640px) {

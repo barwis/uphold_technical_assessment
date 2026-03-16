@@ -59,9 +59,12 @@ export function CurrencySelector<T = string>({
     }
   }, [isOpen, selectedIndex]);
 
-  const handleToggle = () => {
-    if (!disabled) {
-      setIsOpen(!isOpen);
+  const focusInputAtEnd = () => {
+    const input = document.getElementById("currency-input") as HTMLInputElement;
+    if (input) {
+      input.focus();
+      const length = input.value.length;
+      input.setSelectionRange(length, length);
     }
   };
 
@@ -69,7 +72,7 @@ export function CurrencySelector<T = string>({
     onChange?.(option.value);
     setIsOpen(false);
     setFocusedIndex(-1);
-    triggerRef.current?.focus();
+    focusInputAtEnd();
   };
 
   const handleTriggerKeyDown = (event: React.KeyboardEvent) => {
@@ -134,11 +137,17 @@ export function CurrencySelector<T = string>({
       case "Escape":
         event.preventDefault();
         setIsOpen(false);
-        triggerRef.current?.focus();
+        focusInputAtEnd();
         break;
       case "Tab":
         setIsOpen(false);
         break;
+    }
+  };
+
+  const handleFocus = () => {
+    if (!disabled && !isOpen) {
+      setIsOpen(true);
     }
   };
 
@@ -151,14 +160,16 @@ export function CurrencySelector<T = string>({
     >
       <button
         ref={triggerRef}
+        id="currency-selector"
         type="button"
         className="currency-selector-trigger"
-        onClick={handleToggle}
+        onFocus={handleFocus}
         onKeyDown={handleTriggerKeyDown}
         disabled={disabled}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
         aria-labelledby="dropdown-label"
+        tabIndex={0}
       >
         <span className="currency-selector-trigger-content">
           {selectedOption?.icon && (
