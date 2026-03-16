@@ -1,5 +1,6 @@
 .currency-input-wrapper {
   display: inline-block;
+  overflow: hidden;
   position: relative;
   width: 100%;
 }
