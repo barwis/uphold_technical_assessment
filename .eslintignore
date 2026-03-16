@@ -1,0 +1,7 @@
+node_modules/
+build/
+public/
+coverage/
+*.config.js
+*.setup.js
+react-app-env.d.ts

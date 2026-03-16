@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/uphold_technical_assessment/static/css/main.5a197885.css",
+    "main.js": "/uphold_technical_assessment/static/js/main.e43f9f03.js",
+    "static/js/453.fb3926ac.chunk.js": "/uphold_technical_assessment/static/js/453.fb3926ac.chunk.js",
+    "index.html": "/uphold_technical_assessment/index.html",
+    "main.5a197885.css.map": "/uphold_technical_assessment/static/css/main.5a197885.css.map",
+    "main.e43f9f03.js.map": "/uphold_technical_assessment/static/js/main.e43f9f03.js.map",
+    "453.fb3926ac.chunk.js.map": "/uphold_technical_assessment/static/js/453.fb3926ac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5a197885.css",
+    "static/js/main.e43f9f03.js"
+  ]
+}
