@@ -4,7 +4,7 @@ import { createBrowserStorage } from './BrowserStorage';
 import { createFetchClient } from './FetchClient';
 
 const sdk = new SDK({
-  baseUrl: 'http://api-sandbox.uphold.com',
+  baseUrl: 'https://api-sandbox.uphold.com',
   clientId: 'foo',
   clientSecret: 'bar',
 });
